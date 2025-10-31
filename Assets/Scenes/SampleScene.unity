@@ -1187,6 +1187,7 @@ GameObject:
   - component: {fileID: 1845232404}
   - component: {fileID: 1845232405}
   - component: {fileID: 1845232406}
+  - component: {fileID: 1845232407}
   m_Layer: 0
   m_Name: RedHood
   m_TagString: Untagged
@@ -1392,6 +1393,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.12, y: 0.28}
   m_EdgeRadius: 0
+--- !u!114 &1845232407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845232398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e24b0e5aa1208948a5757fbf2991c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotKeys: 710000006500000072000000
+  switchKey: 304
+  abilitySets:
+  - {fileID: 11400000, guid: c218765671c05be4e88ff368ca0a355c, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
