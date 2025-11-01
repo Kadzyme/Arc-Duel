@@ -1409,6 +1409,8 @@ MonoBehaviour:
   switchKey: 304
   abilitySets:
   - {fileID: 11400000, guid: c218765671c05be4e88ff368ca0a355c, type: 2}
+  - {fileID: 11400000, guid: 13442410bd758ff4a9525aa5f22552dc, type: 2}
+  - {fileID: 11400000, guid: d5b3f2f45e76b5848972a8b932fe1ee9, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e74f761a42031f44ba121128eed1c3d, type: 3}
-  m_Name: FireAbilitySet
+  m_Name: IceAbilitySet
   m_EditorClassIdentifier: 
-  mode: 0
+  mode: 1
   abilities:
-  - {fileID: 11400000, guid: 22b4bf313f6a5ef4cbc8d23396683870, type: 2}
-  - {fileID: 11400000, guid: 22b4bf313f6a5ef4cbc8d23396683870, type: 2}
+  - {fileID: 11400000, guid: ae5c107671416b44ba8b575981ccfdbe, type: 2}
+  - {fileID: 11400000, guid: ae5c107671416b44ba8b575981ccfdbe, type: 2}
+  - {fileID: 11400000, guid: ae5c107671416b44ba8b575981ccfdbe, type: 2}

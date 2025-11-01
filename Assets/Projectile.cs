@@ -1,34 +1,30 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float lifetime = 5f;
-    [SerializeField] private LayerMask destroyOnCollisionLayers;
-    [SerializeField] private float damage = 1f;
+    [SerializeField] private float speed = 10f;
+    [SerializeField] private LayerMask hitLayers;
+    [SerializeField] private bool ignoreOwner = true;
 
-    private Vector2 direction;
-    private float spawnTime;
+    private Rigidbody2D rb;
+    private GameObject owner;
 
-    public void Init(Vector2 dir)
+    public void Init(Vector2 dir, GameObject owner)
     {
-        direction = dir.normalized;
-        spawnTime = Time.time;
-    }
+        this.owner = owner;
 
-    private void Update()
-    {
-        transform.position += (Vector3)(speed * Time.deltaTime * direction);
+        rb = GetComponent<Rigidbody2D>();
 
-        if (Time.time - spawnTime >= lifetime)
-            Destroy(gameObject);
+        rb.linearVelocity = dir.normalized * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (((1 << collision.gameObject.layer) & destroyOnCollisionLayers) != 0)
-        {
+        if (ignoreOwner && collision.gameObject == owner)
+            return;
+
+        if (((1 << collision.gameObject.layer) & hitLayers) != 0)
             Destroy(gameObject);
-        }
     }
 }
