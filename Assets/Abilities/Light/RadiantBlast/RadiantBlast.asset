@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 225a5727e338afb449f2f1ed140dcd4a, type: 3}
-  m_Name: Holy Beam
+  m_Name: RadiantBlast
   m_EditorClassIdentifier: 
-  abilityName: Holy Beam
-  icon: {fileID: 21300000, guid: 543fff9c6bee69649a543666c301ca86, type: 3}
-  cooldown: 2
-  projectilePrefab: {fileID: 6991027028437298830, guid: 612e3f0c9027c94468e69e8058146fbb, type: 3}
-  maxDistance: 0.1
+  abilityName: Radiant Blast
+  icon: {fileID: 8157113302327534846, guid: 0733380d592597445a66db504adf66f4, type: 3}
+  cooldown: 5
+  projectilePrefab: {fileID: 3372672647017644342, guid: 06e69078f5dc2c34d9599689cb9804e7, type: 3}
+  maxDistance: 3
   spawnAsChild: 0

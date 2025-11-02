@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 3126308830324733485}
   - component: {fileID: 6175298266446155835}
   - component: {fileID: 2731915494129183523}
+  - component: {fileID: -3019983771503552174}
   - component: {fileID: 4900374196142710082}
   - component: {fileID: -5108391133499663412}
   - component: {fileID: 1284232619482773356}
   - component: {fileID: -2922949090013191393}
   - component: {fileID: -432632652698510}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FireballProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,6 +158,22 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.075, y: -0.01}
   m_Radius: 0.0775
+--- !u!114 &-3019983771503552174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6991027028437298830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37057a2090da53042bca18ba35f48ab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagePerTick: 15
+  tickRate: 0
+  destroyOnHit: 1
+  damageOnce: 1
 --- !u!114 &4900374196142710082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,8 +189,7 @@ MonoBehaviour:
   speed: 3.5
   hitLayers:
     serializedVersion: 2
-    m_Bits: 8
-  ignoreOwner: 1
+    m_Bits: 72
 --- !u!95 &-5108391133499663412
 Animator:
   serializedVersion: 7
@@ -210,7 +226,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPrefab: {fileID: 2517045007819851531, guid: 6ac978bf6688dd74f97b8c985b59178a, type: 3}
   inheritDirection: 1
-  delay: 0
 --- !u!114 &-2922949090013191393
 MonoBehaviour:
   m_ObjectHideFlags: 0

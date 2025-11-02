@@ -4,14 +4,14 @@ using UnityEngine;
 public class ProjectileSpawn : Ability
 {
     [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private float maxDistance = 5f;
-    [SerializeField] private Vector2 spawnOffset = Vector2.zero;
+    [SerializeField] private float maxDistance = 0;
+    [SerializeField] private bool spawnAsChild = false;
 
     protected override void Use(GameObject user)
     {
         if (projectilePrefab == null || user == null) return;
 
-        Vector2 origin = (Vector2)user.transform.position + spawnOffset;
+        Vector2 origin = user.transform.position;
         Vector2 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direction = targetPos - origin;
 
@@ -21,11 +21,15 @@ public class ProjectileSpawn : Ability
         Vector2 spawnPos = origin + direction;
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
         float baseRotation = projectilePrefab.transform.rotation.eulerAngles.z;
-
         Quaternion rotation = Quaternion.Euler(0, 0, angle + baseRotation);
-        GameObject projectile = Instantiate(projectilePrefab, spawnPos, rotation);
+
+        GameObject projectile = Instantiate(
+            projectilePrefab,
+            spawnPos,
+            rotation,
+            spawnAsChild ? user.transform : null
+        );
 
         Collider2D userCol = user.GetComponent<Collider2D>();
         Collider2D projCol = projectile.GetComponent<Collider2D>();

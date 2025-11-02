@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 225a5727e338afb449f2f1ed140dcd4a, type: 3}
-  m_Name: Holy Beam
+  m_Name: Light Shield
   m_EditorClassIdentifier: 
-  abilityName: Holy Beam
-  icon: {fileID: 21300000, guid: 543fff9c6bee69649a543666c301ca86, type: 3}
-  cooldown: 2
-  projectilePrefab: {fileID: 6991027028437298830, guid: 612e3f0c9027c94468e69e8058146fbb, type: 3}
-  maxDistance: 0.1
+  abilityName: Light Shield
+  icon: {fileID: 0}
+  cooldown: 3
+  projectilePrefab: {fileID: 4783212807657679346, guid: 55bd207daf09df04c90ed0edcaadeeb0, type: 3}
+  maxDistance: 0.5
   spawnAsChild: 0

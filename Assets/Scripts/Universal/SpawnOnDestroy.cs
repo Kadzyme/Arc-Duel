@@ -5,7 +5,6 @@ public class SpawnOnDestroy : MonoBehaviour
 {
     [SerializeField] private GameObject spawnPrefab;
     [SerializeField] private bool inheritDirection = false;
-    [SerializeField] private float delay = 0f;
 
     private bool isQuitting;
 
@@ -16,9 +15,6 @@ public class SpawnOnDestroy : MonoBehaviour
         if (isQuitting || spawnPrefab == null)
             return;
 
-        if (delay > 0f)
-            StartCoroutine(SpawnWithDelay());
-        else
             SpawnNow();
     }
 
@@ -34,11 +30,5 @@ public class SpawnOnDestroy : MonoBehaviour
         }
 
         Instantiate(spawnPrefab, transform.position, rotation);
-    }
-
-    private IEnumerator SpawnWithDelay()
-    {
-        yield return new WaitForSeconds(delay);
-        SpawnNow();
     }
 }

@@ -10,4 +10,7 @@ public class LimitedLifetime : MonoBehaviour
         if (lifetime <= 0f)
             Destroy(gameObject);
     }
+
+    public void DestroySelf()
+        => Destroy(gameObject);
 }
