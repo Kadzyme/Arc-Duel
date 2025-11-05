@@ -6,6 +6,7 @@ public class ProjectileSpawn : Ability
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float maxDistance = 0;
     [SerializeField] private bool spawnAsChild = false;
+    [SerializeField] private bool usePlayerDirection = true;
 
     protected override void Use(GameObject user)
     {
@@ -20,9 +21,21 @@ public class ProjectileSpawn : Ability
 
         Vector2 spawnPos = origin + direction;
 
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        float baseRotation = projectilePrefab.transform.rotation.eulerAngles.z;
-        Quaternion rotation = Quaternion.Euler(0, 0, angle + baseRotation);
+        Quaternion rotation;
+        Vector2 projectileDirection;
+
+        if (usePlayerDirection)
+        {
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            float baseRotation = projectilePrefab.transform.rotation.eulerAngles.z;
+            rotation = Quaternion.Euler(0, 0, angle + baseRotation);
+            projectileDirection = direction.normalized;
+        }
+        else
+        {
+            rotation = projectilePrefab.transform.rotation;
+            projectileDirection = projectilePrefab.transform.right.normalized;
+        }
 
         GameObject projectile = Instantiate(
             projectilePrefab,
@@ -38,6 +51,6 @@ public class ProjectileSpawn : Ability
 
         Projectile proj = projectile.GetComponent<Projectile>();
         if (proj != null)
-            proj.Init(direction.normalized, user);
+            proj.Init(projectileDirection, user);
     }
 }

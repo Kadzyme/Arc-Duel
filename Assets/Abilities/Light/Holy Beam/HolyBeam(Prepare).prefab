@@ -99,7 +99,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6991027028437298830}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -134,7 +134,6 @@ MonoBehaviour:
   hitLayers:
     serializedVersion: 2
     m_Bits: 0
-  ignoreOwner: 1
 --- !u!114 &-7267625296917403197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,7 +148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPrefab: {fileID: 6991027028437298830, guid: db45c9dd9c7a215409544e27a722c179, type: 3}
   inheritDirection: 1
-  delay: 0
 --- !u!114 &3901594452190360764
 MonoBehaviour:
   m_ObjectHideFlags: 0

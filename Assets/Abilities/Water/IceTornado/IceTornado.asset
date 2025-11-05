@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 225a5727e338afb449f2f1ed140dcd4a, type: 3}
-  m_Name: IceShard
+  m_Name: IceTornado
   m_EditorClassIdentifier: 
-  abilityName: Ice SHard
-  icon: {fileID: 21300000, guid: 543fff9c6bee69649a543666c301ca86, type: 3}
-  cooldown: 1
-  projectilePrefab: {fileID: 6991027028437298830, guid: 056797a40fb3a13499dbf00f347c9037, type: 3}
-  maxDistance: 0.1
+  abilityName: Ice Tornado
+  icon: {fileID: 0}
+  cooldown: 5
+  projectilePrefab: {fileID: 8826346220608575128, guid: f38d8f1939864234b9dd3f015d1fe536, type: 3}
+  maxDistance: 1.5
   spawnAsChild: 0
-  usePlayerDirection: 1
+  usePlayerDirection: 0

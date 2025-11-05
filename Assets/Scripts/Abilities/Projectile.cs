@@ -13,7 +13,8 @@ public class Projectile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        rb.linearVelocity = dir.normalized * speed;
+        if (rb.bodyType != RigidbodyType2D.Static)
+            rb.linearVelocity = dir.normalized * speed;
 
         StartCoroutine(RemoveIgnoreAfterDelay(owner.GetComponent<Collider2D>(), 0.5f));
     }
@@ -22,7 +23,10 @@ public class Projectile : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), userCol, false);
+        var collider = GetComponent<Collider2D>();
+
+        if (collider != null)
+            Physics2D.IgnoreCollision(collider, userCol, false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

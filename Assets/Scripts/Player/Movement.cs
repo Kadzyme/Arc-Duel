@@ -25,7 +25,6 @@ public class Movement : MonoBehaviour
     {
         moveInput = Input.GetAxisRaw("Horizontal");
 
-        // Прыжок
         if (groundSensor != null && groundSensor.IsGrounded && Input.GetButtonDown("Jump"))
         {
             var velocity = rb.linearVelocity;
@@ -33,7 +32,6 @@ public class Movement : MonoBehaviour
             rb.linearVelocity = velocity;
         }
 
-        // Разворот персонажа
         if (!facingRight && moveInput > 0)
             Flip();
         else if (facingRight && moveInput < 0)

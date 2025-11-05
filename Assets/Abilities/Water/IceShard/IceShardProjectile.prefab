@@ -15,7 +15,9 @@ GameObject:
   - component: {fileID: 4900374196142710082}
   - component: {fileID: 1794566729080793430}
   - component: {fileID: -5893168402823907700}
-  m_Layer: 0
+  - component: {fileID: 1313319533433550462}
+  - component: {fileID: -7763101523737656891}
+  m_Layer: 6
   m_Name: IceShardProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +106,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -167,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6527536d8cfa10c43b28954b04a48672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 5
   hitLayers:
     serializedVersion: 2
     m_Bits: 72
@@ -200,3 +202,36 @@ MonoBehaviour:
   tickRate: 0
   destroyOnHit: 1
   damageOnce: 1
+  knockbackForce: 0
+  knockbackOffset: {x: 0, y: 0}
+--- !u!114 &1313319533433550462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6991027028437298830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d1d6bf0998782c4d9c4489f11d547bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  onDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-7763101523737656891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6991027028437298830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d4a2f5d269a3149b022be767f74ccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 720
+  rotationOffset: -40
+  flipWhenFacingLeft: 1
