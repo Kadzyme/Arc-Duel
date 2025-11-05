@@ -10,8 +10,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private GroundSensor groundSensor;
 
     private Rigidbody2D rb;
-    private float moveInput;
     private bool facingRight = true;
+    private float _moveInputX;
 
     private void Awake()
     {
@@ -23,25 +23,28 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
-        moveInput = Input.GetAxisRaw("Horizontal");
+        _moveInputX = 0f;
+        if (Input.GetKey(InputManager.Instance.GetKey(PlayerAction.MoveRight))) _moveInputX += 1f;
+        if (Input.GetKey(InputManager.Instance.GetKey(PlayerAction.MoveLeft))) _moveInputX -= 1f;
 
-        if (groundSensor != null && groundSensor.IsGrounded && Input.GetButtonDown("Jump"))
+        if (groundSensor != null && groundSensor.IsGrounded &&
+            Input.GetKeyDown(InputManager.Instance.GetKey(PlayerAction.Jump)))
         {
             var velocity = rb.linearVelocity;
             velocity.y = jumpForce;
             rb.linearVelocity = velocity;
         }
 
-        if (!facingRight && moveInput > 0)
+        if (!facingRight && _moveInputX > 0)
             Flip();
-        else if (facingRight && moveInput < 0)
+        else if (facingRight && _moveInputX < 0)
             Flip();
     }
 
     private void FixedUpdate()
     {
         var velocity = rb.linearVelocity;
-        velocity.x = moveInput * moveSpeed;
+        velocity.x = _moveInputX * moveSpeed;
         rb.linearVelocity = velocity;
     }
 

@@ -2,13 +2,7 @@ using UnityEngine;
 
 public class AbilityManager : MonoBehaviour
 {
-    [Header("Main Abilities")]
-    [SerializeField] private KeyCode[] slotKeys = { KeyCode.Q, KeyCode.E, KeyCode.R };
-    [SerializeField] private KeyCode switchKey = KeyCode.LeftShift;
     [SerializeField] private AbilitySet[] abilitySets;
-
-    [Header("Inherit Ability")]
-    [SerializeField] private KeyCode inheritAbilityKey = KeyCode.C;
     [SerializeField] private Ability inheritAbility;
 
     private int currentSetIndex = 0;
@@ -16,19 +10,22 @@ public class AbilityManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(switchKey))
+        if (Input.GetKeyDown(InputManager.Instance.GetKey(PlayerAction.SwitchSet)))
             CycleMode();
 
-        for (int i = 0; i < slotKeys.Length; i++)
+        if (CurrentSet != null)
         {
-            if (Input.GetKeyDown(slotKeys[i]))
-                CurrentSet?.GetAbility(i)?.TryUse(gameObject);
+            int slotCount = CurrentSet.SlotCount;
+            for (int i = 0; i < slotCount; i++)
+            {
+                PlayerAction action = GetPlayerActionForSlot(i);
+                if (Input.GetKeyDown(InputManager.Instance.GetKey(action)))
+                    CurrentSet.GetAbility(i)?.TryUse(gameObject);
+            }
         }
 
-        if (inheritAbility != null && Input.GetKeyDown(inheritAbilityKey))
-        {
+        if (inheritAbility != null && Input.GetKeyDown(InputManager.Instance.GetKey(PlayerAction.InheritAbility)))
             inheritAbility.TryUse(gameObject);
-        }
     }
 
     private void CycleMode()
@@ -37,19 +34,10 @@ public class AbilityManager : MonoBehaviour
         currentSetIndex = (currentSetIndex + 1) % abilitySets.Length;
     }
 
-    public void RebindSlot(int slotIndex, KeyCode newKey)
-    {
-        if (slotIndex < 0 || slotIndex >= slotKeys.Length) return;
-        slotKeys[slotIndex] = newKey;
-    }
+    public void SetInheritAbility(Ability newAbility) => inheritAbility = newAbility;
 
-    public void SetInheritAbility(Ability newAbility)
+    private PlayerAction GetPlayerActionForSlot(int slotIndex)
     {
-        inheritAbility = newAbility;
-    }
-
-    public void SetInheritAbilityKey(KeyCode newKey)
-    {
-        inheritAbilityKey = newKey;
+        return (PlayerAction)((int)PlayerAction.Ability1 + slotIndex);
     }
 }

@@ -9,15 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b416782427077af4e9200b94048f35d4, type: 3}
-  m_Name: Blink
+  m_Script: {fileID: 11500000, guid: 2aa483f8b56a395448fb22efd0234b15, type: 3}
+  m_Name: Input
   m_EditorClassIdentifier: 
-  abilityName: Blink
-  icon: {fileID: 0}
-  cooldown: 1
-  blinkDistance: 1
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 8
-  useMouseDirection: 1
-  keepVelocity: 0
+  actions: 0000000001000000030000000400000005000000060000000700000008000000
+  keys: 6100000064000000660000007100000065000000720000002000000044010000
