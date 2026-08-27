@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225a5727e338afb449f2f1ed140dcd4a, type: 3}
   m_Name: FireWheel
   m_EditorClassIdentifier: 
-  abilityName: Fire Wheel
-  icon: {fileID: 0}
   cooldown: 1
-  projectilePrefab: {fileID: 2227367759862206486, guid: 0d9f1a86dde725d48a2015ce21d9028a, type: 3}
-  maxDistance: 0.2
-  spawnAsChild: 0
+  projectilePrefab: {fileID: 1067724661479468114, guid: 0d9f1a86dde725d48a2015ce21d9028a, type: 3}
+  maxDistance: 0
+  spawnAsChild: 1
+  usePlayerDirection: 0

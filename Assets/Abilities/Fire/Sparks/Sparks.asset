@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225a5727e338afb449f2f1ed140dcd4a, type: 3}
+  m_Name: Sparks
+  m_EditorClassIdentifier: 
+  cooldown: 1
+  projectilePrefab: {fileID: 6410830334203446242, guid: 1a86e099d7989ac4ebd685f140951be9, type: 3}
+  maxDistance: 0.01
+  spawnAsChild: 0
+  usePlayerDirection: 1

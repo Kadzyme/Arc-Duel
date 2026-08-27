@@ -44,13 +44,12 @@ public class ProjectileSpawn : Ability
             spawnAsChild ? user.transform : null
         );
 
-        Collider2D userCol = user.GetComponent<Collider2D>();
-        Collider2D projCol = projectile.GetComponent<Collider2D>();
-        if (userCol && projCol)
-            Physics2D.IgnoreCollision(projCol, userCol);
-
         Projectile proj = projectile.GetComponent<Projectile>();
         if (proj != null)
             proj.Init(projectileDirection, user);
+
+        DamageArea damageArea = projectile.GetComponent<DamageArea>();
+        if (damageArea != null)
+            damageArea.Init(user);
     }
 }

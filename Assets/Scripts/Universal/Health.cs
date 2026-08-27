@@ -10,23 +10,21 @@ public class Health : MonoBehaviour
 
     private float currentHealth;
 
-    private void Awake() => currentHealth = maxHealth;
+    private void Awake() 
+        => currentHealth = maxHealth;
 
     public void TakeDamage(float amount)
     {
-        if (currentHealth <= 0) return;
-
         currentHealth -= amount;
 
-        if (currentHealth > 0)
-            onDamageTaken?.Invoke();
-        else
-            Destroy(gameObject);
+        Debug.Log($"Current HP: {currentHealth}");
+
+        onDamageTaken?.Invoke();
+
+        if (currentHealth < 0)
+            Global.SafeDestroyProjectile(gameObject);
     }
 
     public void Heal(float amount)
         => currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
-
-    public float CurrentHealth => currentHealth;
-    public float MaxHealth => maxHealth;
 }

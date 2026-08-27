@@ -2,39 +2,25 @@ using UnityEngine;
 
 public class AbilityManager : MonoBehaviour
 {
-    [SerializeField] private AbilitySet[] abilitySets;
-    [SerializeField] private Ability inheritAbility;
-
-    private int currentSetIndex = 0;
-    private AbilitySet CurrentSet => abilitySets != null && abilitySets.Length > 0 ? abilitySets[currentSetIndex] : null;
+    [SerializeField] private AbilitySet abilitySet;
+    [SerializeField] private Ability blinkAbility;
 
     private void Update()
     {
-        if (Input.GetKeyDown(InputManager.Instance.GetKey(PlayerAction.SwitchSet)))
-            CycleMode();
-
-        if (CurrentSet != null)
+        if (abilitySet != null)
         {
-            int slotCount = CurrentSet.SlotCount;
+            int slotCount = abilitySet.SlotCount;
             for (int i = 0; i < slotCount; i++)
             {
                 PlayerAction action = GetPlayerActionForSlot(i);
                 if (Input.GetKeyDown(InputManager.Instance.GetKey(action)))
-                    CurrentSet.GetAbility(i)?.TryUse(gameObject);
+                    abilitySet.GetAbility(i)?.TryUse(gameObject);
             }
         }
 
-        if (inheritAbility != null && Input.GetKeyDown(InputManager.Instance.GetKey(PlayerAction.InheritAbility)))
-            inheritAbility.TryUse(gameObject);
+        if (blinkAbility != null && Input.GetKeyDown(InputManager.Instance.GetKey(PlayerAction.InheritAbility)))
+            blinkAbility.TryUse(gameObject);
     }
-
-    private void CycleMode()
-    {
-        if (abilitySets == null || abilitySets.Length == 0) return;
-        currentSetIndex = (currentSetIndex + 1) % abilitySets.Length;
-    }
-
-    public void SetInheritAbility(Ability newAbility) => inheritAbility = newAbility;
 
     private PlayerAction GetPlayerActionForSlot(int slotIndex)
     {
