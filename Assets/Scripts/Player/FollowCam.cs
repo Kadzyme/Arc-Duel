@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [Header("÷ель")]
+    [Header("Target")]
     [SerializeField] private Transform target;
 
-    [Header("—глаживание")]
+    [Header("Smooth")]
     [SerializeField] private float smoothTime = 0.2f;
     [SerializeField] private Vector3 offset = new(0, 0.2f, -10);
 

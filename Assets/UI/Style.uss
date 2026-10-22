@@ -1,0 +1,44 @@
+.menu-button {
+    font-size: 65px;
+    -unity-font-definition: resource('Fonts/KiwiSoda');
+    margin-top: 5%;
+    width: 60%;
+    background-image: url("project://database/Assets/UI/Resources/Sprites/PixelArtUIButtons.png?fileID=-573183054098647697&guid=0eb23acfdb15c09498af09471c086fc1&type=3#FreeButtons_0");
+    -unity-slice-left: 0;
+    -unity-slice-top: 0;
+    -unity-slice-right: 0;
+    -unity-slice-bottom: 0;
+    -unity-slice-scale: 6px;
+    padding-bottom: 3%;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(220, 220, 220);
+    height: 15%;
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+.menu-button:hover {
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    -unity-slice-scale: 6px;
+    background-image: url("project://database/Assets/UI/Resources/Sprites/PixelArtUIButtons.png?fileID=-573183054098647697&guid=0eb23acfdb15c09498af09471c086fc1&type=3#FreeButtons_0");
+    color: rgb(255, 220, 100);
+}
+
+.menu-button:active {
+    visibility: visible;
+    background-image: url("project://database/Assets/UI/Resources/Sprites/PixelArtUIButtons.png?fileID=-5327115484206848561&guid=0eb23acfdb15c09498af09471c086fc1&type=3#FreeButtons_1");
+    padding-bottom: 1.5%;
+    padding-top: 1.5%;
+    margin-top: 5%;
+    -unity-slice-scale: 6px;
+    width: 60%;
+    height: 15%;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    color: rgb(230, 190, 80);
+}
+
+.menu-border {
+    -unity-background-image-tint-color: rgb(200, 200, 200);
+}

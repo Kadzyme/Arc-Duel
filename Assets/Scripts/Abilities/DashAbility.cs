@@ -37,10 +37,9 @@ public class DashAbility : Ability
 
             if (hit.collider != null)
             {
-                float skinWidth = 0.05f;
                 float offsetDistance = Mathf.Abs(targetDirection.x) > Mathf.Abs(targetDirection.y)
-                    ? (characterSize.x / 2f) + skinWidth
-                    : (characterSize.y / 2f) + skinWidth;
+                    ? (characterSize.x / 2.5f)
+                    : (characterSize.y / 2.5f);
 
                 targetPosition = hit.point - (targetDirection * offsetDistance);
             }

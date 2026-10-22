@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Dash
   m_EditorClassIdentifier: 
   cooldown: 1
-  dashDistance: 1
-  dashSpeed: 9
+  dashDistance: 0.75
+  dashSpeed: 10
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 8

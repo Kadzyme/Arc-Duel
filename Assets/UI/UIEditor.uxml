@@ -1,0 +1,20 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Style.uss?fileID=7433441132597879392&amp;guid=d6bba2c17c80c51469727fd9e45fa4dd&amp;type=3#Style" />
+    <ui:VisualElement name="Background" style="width: 100%; height: 100%; position: absolute; background-color: rgb(97, 97, 97); background-image: url(&quot;project://database/Assets/PlatformerSet1/01%20background.png?fileID=2800000&amp;guid=543fff9c6bee69649a543666c301ca86&amp;type=3#01 background&quot;);">
+        <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/PlatformerSet1/02%20background.png?fileID=2800000&amp;guid=0ff110103311344449b3b91008a97905&amp;type=3#02 background&quot;);">
+            <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/PlatformerSet1/03%20background%20B.png?fileID=2800000&amp;guid=671c2728bfbe13e4a908a31d4b0a22fc&amp;type=3#03 background B&quot;); -unity-background-image-tint-color: rgb(255, 255, 255);">
+                <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/PlatformerSet1/03%20background%20A.png?fileID=2800000&amp;guid=eb06709a3d006f5448d017252797e8a4&amp;type=3#03 background A&quot;); -unity-background-image-tint-color: rgb(255, 255, 255);">
+                    <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/PlatformerSet1/04%20background.png?fileID=2800000&amp;guid=048637bba7f02c8499a2dfc07ecc075f&amp;type=3#04 background&quot;);" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="MenuBox" style="flex-grow: 1;">
+        <ui:GroupBox name="MenuPanel" enabled="true" class="menu-border" style="align-items: center; height: 80%; width: 40%; font-size: 90%; -unity-text-align: middle-center; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0%; padding-right: 0; padding-bottom: 0%; padding-left: 0; align-self: center; align-content: auto; justify-content: center; -unity-font-definition: resource(&apos;Fonts/KiwiSoda&apos;); transform-origin: center; background-image: resource(&apos;Sprites/PixeArtUIBorders&apos;); top: 10%; flex-shrink: 0; visibility: visible; -unity-font-style: normal; bottom: auto; background-color: rgb(28, 28, 30); -unity-slice-scale: 5px;">
+            <ui:Label text="Arc Duel" style="position: absolute; top: 10%; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 81px; color: rgb(220, 220, 220);" />
+            <ui:Button text="Play&#10;" name="PlayButton" class="menu-button" />
+            <ui:Button text="Settings" name="SettingsButton" class="menu-button" />
+            <ui:Button text="Quit" name="QuitButton" class="menu-button" />
+        </ui:GroupBox>
+    </ui:VisualElement>
+</ui:UXML>

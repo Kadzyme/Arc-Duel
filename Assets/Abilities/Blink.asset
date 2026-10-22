@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Blink
   m_EditorClassIdentifier: 
   cooldown: 1
-  blinkDistance: 1
+  blinkDistance: 1.2
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 8
-  checkObstacles: 1
+  checkObstacles: 0
